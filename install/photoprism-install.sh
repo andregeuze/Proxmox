@@ -43,7 +43,7 @@ fi
 ldconfig
 cat <<EOF >/opt/photoprism/config/.env
 PHOTOPRISM_AUTH_MODE='password'
-PHOTOPRISM_ADMIN_PASSWORD='changeme'
+PHOTOPRISM_ADMIN_PASSWORD='helper-scripts.com'
 PHOTOPRISM_HTTP_HOST='0.0.0.0'
 PHOTOPRISM_HTTP_PORT='2342'
 PHOTOPRISM_SITE_CAPTION='https://tteck.github.io/Proxmox/'
@@ -51,6 +51,7 @@ PHOTOPRISM_STORAGE_PATH='/opt/photoprism/storage'
 PHOTOPRISM_ORIGINALS_PATH='/opt/photoprism/photos/originals'
 PHOTOPRISM_IMPORT_PATH='/opt/photoprism/photos/import'
 EOF
+ln -sf /opt/photoprism/bin/photoprism /usr/local/bin/photoprism
 msg_ok "Installed PhotoPrism"
 
 msg_info "Creating Service"
